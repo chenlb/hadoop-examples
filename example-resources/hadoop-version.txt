@@ -1,0 +1,6 @@
+Hadoop 2.8.1
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 20fe5304904fc2f5a18053c389e43cd26f7a70fe
+Compiled by vinodkv on 2017-06-02T06:14Z
+Compiled with protoc 2.5.0
+From source with checksum 60125541c2b3e266cbf3becc5bda666
+This command was run using /Users/chenlb/Downloads/runtime/hadoop-2.8.1/share/hadoop/common/hadoop-common-2.8.1.jar
