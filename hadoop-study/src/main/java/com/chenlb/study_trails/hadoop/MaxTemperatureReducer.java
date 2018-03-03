@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,29 +14,27 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
 /**
- * @author chenlb
- * @create 2017-08-18 10:15
+ * @author chenlb 2017-08-18 10:28
  */
-public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class MaxTemperatureReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
 	@Override
-	protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-		String line = value.toString();
-		String[] vs = line.split(",");
+	protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+		int maxValue = Integer.MIN_VALUE;
 
-		if(vs.length > 3) {
-			context.write(new Text(vs[0].substring(0, 4)), new IntWritable(Integer.parseInt(vs[3])));
+		for(IntWritable value : values) {
+			maxValue = Math.max(maxValue, value.get());
 		}
-	}
 
+		context.write(key, new IntWritable(maxValue));
+	}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.fs.FsUrlStreamHandlerFactory;
 import org.apache.hadoop.io.IOUtils;
@@ -24,8 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * @author chenlb
- * @create 2017-08-16 20:04
+ * @author chenlb 2017-08-16 20:04
  */
 public class URLCat {
 
@@ -35,11 +34,11 @@ public class URLCat {
 
 	/**
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.URLCat file://`pwd`/example-resources/hadoop-version.txt
+	 *     hadoop URLCat file://`pwd`/example-resources/hadoop-version.txt
 	 * </code>
 	 * <br/>
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.URLCat hdfs://localhost/user/chenlb/example-resources/hadoop-version.txt
+	 *     hadoop URLCat hdfs://localhost/user/chenlb/example-resources/hadoop-version.txt
 	 * </code>
 	 *
 	 * @param args  url (file:///path/to/file or hdfs://xxx/path/to/file)

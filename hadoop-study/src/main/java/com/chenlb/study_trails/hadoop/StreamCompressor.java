@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.IOUtils;
@@ -23,14 +23,13 @@ import org.apache.hadoop.io.compress.CompressionOutputStream;
 import org.apache.hadoop.util.ReflectionUtils;
 
 /**
- * @author chenlb
- * @create 2017-08-17 18:06
+ * @author chenlb 2017-08-17 18:06
  */
 public class StreamCompressor {
 
 	/**
 	 * <code>
-	 * 	echo "Text" | hadoop com.chenlb.hadoop.examples.StreamCompressor org.apache.hadoop.io.compress.GzipCodec | gunzip
+	 * 	echo "Text" | hadoop StreamCompressor org.apache.hadoop.io.compress.GzipCodec | gunzip
 	 * </code>
 	 * @param args  codec classname (如: org.apache.hadoop.io.compress.GzipCodec)
 	 */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -27,20 +27,19 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 /**
- * @author chenlb
- * @create 2017-08-18 17:55
+ * @author chenlb 2017-08-18 17:55
  */
 public class MaxTemperatureDriver extends Configured implements Tool {
 
 	/**
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.MaxTemperatureDriver example-resources/temperature output
+	 *     hadoop MaxTemperatureDriver example-resources/temperature output
 	 * </code>
 	 * <p/>
 	 * 实现了 {@link Tool} 支持 -fs -jt -conf 等参数
 	 * <br/>
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.MaxTemperatureDriver -fs file:/// -jt local example-resources/temperature output
+	 *     hadoop MaxTemperatureDriver -fs file:/// -jt local example-resources/temperature output
 	 * </code>
 	 */
 	public static void main(String[] args) throws Exception {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -26,15 +26,14 @@ import java.io.InputStream;
 import java.net.URI;
 
 /**
- * @author chenlb
- * @create 2017-08-16 21:19
+ * @author chenlb 2017-08-16 21:19
  */
 public class FileSystemCat {
 
 	/**
 	 * <ul>
-	 *     <li>hadoop com.chenlb.hadoop.examples.FileSystemCat [file://`pwd`/]example-resources/hadoop-version.txt</li>
-	 *     <li>hadoop com.chenlb.hadoop.examples.FileSystemCat [hdfs://localhost/user/chenlb/]example-resources/hadoop-version.txt</li>
+	 *     <li>hadoop FileSystemCat [file://`pwd`/]example-resources/hadoop-version.txt</li>
+	 *     <li>hadoop FileSystemCat [hdfs://localhost/user/chenlb/]example-resources/hadoop-version.txt</li>
 	 * </ul>
 	 *
 	 * @param args  url (file:///path/to/file or hdfs://xxx/path/to/file), 可以用相对路径

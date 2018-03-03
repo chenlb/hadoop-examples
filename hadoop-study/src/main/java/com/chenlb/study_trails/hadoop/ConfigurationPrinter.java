@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -24,8 +24,7 @@ import org.apache.hadoop.util.ToolRunner;
 import java.util.Map;
 
 /**
- * @author chenlb
- * @create 2017-08-18 09:45
+ * @author chenlb 2017-08-18 09:45
  */
 public class ConfigurationPrinter extends Configured implements Tool {
 
@@ -49,11 +48,11 @@ public class ConfigurationPrinter extends Configured implements Tool {
 
 	/**
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.ConfigurationPrinter
+	 *     hadoop ConfigurationPrinter
 	 * </code>
 	 * <br/>
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.ConfigurationPrinter -D color=yellow | grep color
+	 *     hadoop ConfigurationPrinter -D color=yellow | grep color
 	 * </code>
 	 * @param args
 	 * @throws Exception

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,28 +14,27 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Reducer;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.IOException;
 
 /**
- * @author chenlb
- * @create 2017-08-18 10:28
+ * @author chenlb 2017-08-17 20:55
  */
-public class MaxTemperatureReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class ExampleTest {
 
-	@Override
-	protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-		int maxValue = Integer.MIN_VALUE;
+	@Test
+	@Ignore
+	public void runSequenceFileWriteDemo() throws IOException {
+		SequenceFileWriteDemo.main("output/numbers.seq".split(" "));
+	}
 
-		for(IntWritable value : values) {
-			maxValue = Math.max(maxValue, value.get());
-		}
-
-		context.write(key, new IntWritable(maxValue));
+	@Test
+	@Ignore
+	public void runSequenceFileReadDemo() throws IOException {
+		SequenceFileReadDemo.main("output/numbers.seq".split(" "));
 	}
 }

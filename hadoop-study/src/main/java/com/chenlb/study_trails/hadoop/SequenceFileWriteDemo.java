@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -28,8 +28,7 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
- * @author chenlb
- * @create 2017-08-17 20:54
+ * @author chenlb 2017-08-17 20:54
  */
 public class SequenceFileWriteDemo {
 
@@ -43,7 +42,7 @@ public class SequenceFileWriteDemo {
 
 	/**
 	 * <code>
-	 *     hadoop com.chenlb.hadoop.examples.SequenceFileWriteDemo output/numbers.seq
+	 *     hadoop SequenceFileWriteDemo output/numbers.seq
 	 * </code>
 	 * @param args 顺序文件写入的文件，如：output/numbers.seq
 	 */

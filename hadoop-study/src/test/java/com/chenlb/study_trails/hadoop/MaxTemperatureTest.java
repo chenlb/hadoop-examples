@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 chenlb
+ * Copyright 2018 chenlb
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.chenlb.hadoop.examples;
+package com.chenlb.study_trails.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -37,8 +37,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author chenlb
- * @create 2017-08-18 18:32
+ * @author chenlb 2017-08-18 18:32
  */
 public class MaxTemperatureTest {
 
