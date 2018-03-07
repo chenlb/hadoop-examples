@@ -290,6 +290,7 @@
         <module>hadoop-study</module>
         <module>java-gc-study</module>
         <module>json-study</module>
-	</modules>
+        <module>antlr-study</module>
+    </modules>
 
 </project>
