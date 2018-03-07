@@ -288,6 +288,7 @@
 
     <modules>
         <module>hadoop-study</module>
-    </modules>
+        <module>java-gc-study</module>
+	</modules>
 
 </project>
