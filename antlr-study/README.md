@@ -20,7 +20,7 @@ antlr4 源码目录，如
 │                           └── ArrayInitTest.java
 ```
 
-加了 maven antlr 插件手，先 mvn clean package 后就可以 idea 运行 junit 了
+加了 maven antlr 插件手，先 ```mvn antlr4:antlr4``` 后就可以 idea 运行 junit 了
 
 ```xml
 <build>
@@ -41,3 +41,15 @@ antlr4 源码目录，如
 	</plugins>
 </build>
 ```
+
+可以在 maven 属性里是否开启 antlr4.visitor
+
+```xml
+<properties>
+	<antlr4.visitor>true</antlr4.visitor>
+</properties>
+```
+
+## SqlSplit.g4
+
+实现 sql 分割的示例。在一大批以 ';' 分隔的 sql 文件 中。分割出一个个 sql。

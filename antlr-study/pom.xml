@@ -27,6 +27,10 @@
 
 	<artifactId>antlr-study</artifactId>
 
+	<properties>
+		<antlr4.visitor>true</antlr4.visitor>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.antlr</groupId>
