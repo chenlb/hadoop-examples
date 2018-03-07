@@ -26,7 +26,6 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.chenlb.study_trails</groupId>
 	<artifactId>hadoop-study</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 
