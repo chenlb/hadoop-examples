@@ -18,11 +18,19 @@ package com.chenlb.study_trails.json;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
+import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
+import com.jayway.jsonpath.spi.json.JsonProvider;
+import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
+import com.jayway.jsonpath.spi.mapper.MappingProvider;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.Iterator;
+import java.io.InputStream;
+import java.util.*;
 
 /**
  * @author chenlb 2018-03-03 17:28
@@ -34,7 +42,8 @@ public class StudyJacksonTest {
 		ObjectMapper mapper = new ObjectMapper();
 
 		String file = "/json-d1.json";
-		JsonNode root = mapper.readTree(this.getClass().getResourceAsStream(file));
+		InputStream jsonStream = this.getClass().getResourceAsStream(file);
+		JsonNode root = mapper.readTree(jsonStream);
 
 		Assert.assertNotNull(file+" 测试类路径中找不到！", root);
 
@@ -50,5 +59,43 @@ public class StudyJacksonTest {
 			Assert.assertEquals(t.asInt(), ts[i++]);
 		}
 		Assert.assertEquals(i, ts.length);
+	}
+
+	@Test
+	public void testJsonPath() throws IOException {
+		String file = "/json-d1.json";
+		InputStream jsonStream = this.getClass().getResourceAsStream(file);
+
+		List<Integer> types = JsonPath.read(jsonStream, "$[*].type");
+
+		Integer[] ts = new Integer[]{3, 2, 2, 2, 4};
+		List<Integer> rts = Arrays.asList(ts);
+		Assert.assertEquals(types, rts);
+
+		// jackson
+		Configuration.setDefaults(new Configuration.Defaults() {
+
+			private final JsonProvider jsonProvider = new JacksonJsonProvider();
+			private final MappingProvider mappingProvider = new JacksonMappingProvider();
+
+			@Override
+			public JsonProvider jsonProvider() {
+				return jsonProvider;
+			}
+
+			@Override
+			public MappingProvider mappingProvider() {
+				return mappingProvider;
+			}
+
+			@Override
+			public Set<Option> options() {
+				return EnumSet.noneOf(Option.class);
+			}
+		});
+
+		jsonStream = this.getClass().getResourceAsStream(file);
+		types = JsonPath.read(jsonStream, "$[*].type");
+		Assert.assertEquals(types, rts);
 	}
 }
