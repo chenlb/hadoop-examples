@@ -28,7 +28,7 @@
 
 	<groupId>com.chenlb.study_trails</groupId>
 	<artifactId>hadoop-study</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<properties>
 		<hadoop-version>2.8.1</hadoop-version>
