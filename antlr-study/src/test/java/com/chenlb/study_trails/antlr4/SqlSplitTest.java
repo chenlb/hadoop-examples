@@ -64,5 +64,6 @@ public class SqlSplitTest {
 
 		sql_clauses(";\t\n;\t   \n;select 'a,b,c,;',ef,'文',\"中\" from abc where a=1 having c()>3;a;中文;");
 		sql_clauses("--测试注释\nselect 'a,b,c,;',ef,'文',\"中\" /* 多行 comment */ from abc where a=1 having c()>3;");
+		sql_clauses("--测试注释\nselect 'a,b\\',c,;',ef,'文',\"中\\\"文\n\n多行\" /* 多行 comment;\nabc;\nabc; */ from abc where a=1 having c()>3;");
 	}
 }
