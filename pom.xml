@@ -291,6 +291,7 @@
         <module>java-gc-study</module>
         <module>json-study</module>
         <module>antlr-study</module>
-    </modules>
+		<module>avro-study</module>
+	</modules>
 
 </project>
