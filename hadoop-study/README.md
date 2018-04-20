@@ -16,7 +16,7 @@ export HADOOP_CONF_DIR=src/test/resources/local
 #伪分布式
 #export HADOOP_CONF_DIR=src/test/resources/localhost
 
-hadoop com.chenlb.hadoop.examples.MaxTemperature example-resources/temperature output
+hadoop com.chenlb.study_trails.hadoop.MaxTemperature example-resources/temperature output
 ```
 
 ### 使用 -conf 指定运行环境
@@ -26,10 +26,10 @@ hadoop com.chenlb.hadoop.examples.MaxTemperature example-resources/temperature o
 ```bash
 #mvn compile
 
-hadoop com.chenlb.hadoop.examples.MaxTemperatureDriver -conf src/test/resources/local/hadoop-local.xml example-resources/temperature output
+hadoop com.chenlb.study_trails.hadoop.MaxTemperatureDriver -conf src/test/resources/local/hadoop-local.xml example-resources/temperature output
 
 #或 -fs -jt
-#hadoop com.chenlb.hadoop.examples.MaxTemperatureDriver -fs file:/// -jt local example-resources/temperature output
+#hadoop com.chenlb.study_trails.hadoop.MaxTemperatureDriver -fs file:/// -jt local example-resources/temperature output
 ```
 
 ### sh 脚本辅助设置运行环境
