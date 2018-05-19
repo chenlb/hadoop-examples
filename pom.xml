@@ -292,6 +292,7 @@
         <module>json-study</module>
         <module>antlr-study</module>
 		<module>avro-study</module>
-	</modules>
+        <module>hive-sql-study</module>
+    </modules>
 
 </project>

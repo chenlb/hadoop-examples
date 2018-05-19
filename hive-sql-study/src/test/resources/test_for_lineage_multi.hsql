@@ -1,0 +1,35 @@
+use my_db;
+SET hive.mapred.supports.subdirectories=TRUE;
+set mapreduce.input.fileinputformat.input.dir.recursive=true;
+SET mapred.input.dir.recursive=true;
+
+CREATE TABLE IF NOT EXISTS t_c_table_1 AS
+SELECT a.column_a,
+       b.column_b
+FROM
+  (SELECT distinct(my_id)
+   FROM dump_table_1
+   WHERE pt=20170628
+     AND status=1
+
+     AND type=0)a join
+  ( SELECT column_a,column_b
+   FROM default.ods_xxx
+   WHERE DAY='2017-06-28')b ON a.column_a=b.column_a;
+
+
+use dw;
+create table if not exists t_c_table_2 as
+select column_a from t_c_table_1 where length(column_a)>2 and length(column_a)<10;
+
+--中文注释
+use my_db;
+select length(column_a),count(1) from dw.t_c_table_2 group by length(column_a);
+
+use dw;
+select * from t_c_table_2 where length(column_a)=3;
+
+--中文注释
+use dw;
+create table if not exists t_c_table_4 as
+select title_seg from my_db.r_dd_table_3 where pt='${biz_pt}' and  length(title)>2 and rand()<0.5;
