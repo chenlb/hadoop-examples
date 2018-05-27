@@ -23,7 +23,7 @@ CHARS
 STRING
  	: '"' (ESC | .)*? '"'
  	| '\'' (ESC | .)*? '\''
- 	| '`' (~'`' | '``')* '`'
+ 	| '`' .*? '`'
  	;
 COMMENT
 	: '/*' .*? '*/' -> skip
@@ -33,7 +33,9 @@ LINE_COMMENT
 	: '--' .*? '\r'? '\n' -> skip
 	;
 
+WS : [ \t\r\n]+ -> skip;
+
 fragment
 ESC
-	: '\\' [btnr"\\]
+	: '\\' [btnr"'\\]
 	;

@@ -1,5 +1,9 @@
 ## antlr4
 
+```
+mvn antlr4:antlr4
+```
+
 antlr4 源码目录，如
 
 ```
