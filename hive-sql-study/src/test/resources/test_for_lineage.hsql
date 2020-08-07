@@ -1,0 +1,17 @@
+use default;
+
+CREATE TABLE IF NOT EXISTS test_for_lineage (
+  id int	comment '我的id',
+  your_id string comment '你的 id',
+  name string	comment '说明'
+) PARTITIONED BY (pt string);
+
+INSERT OVERWRITE TABLE test_for_lineage PARTITION(pt='2018-05-01')
+VALUES ( 1,'00123','my 05-01 add partition com');
+
+INSERT OVERWRITE TABLE test_for_lineage PARTITION(pt='2018-05-02')
+select id,your_id,name from my_db.other_input_table where pt='2018-05-02' and status=1;
+
+use my_db2;
+INSERT OVERWRITE TABLE default.test_for_lineage PARTITION(pt='2018-05-03')
+select id,your_id,name from my_table_2 where pt='2018-05-03' and status=3
